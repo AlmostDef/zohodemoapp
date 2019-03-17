@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
+<body onload ="func()">
 
-<form action='https://crm.zoho.eu/crm/WebToLeadForm' name=WebToLeads175777000000142437 method='POST' onSubmit='javascript:document.charset="UTF-8"; return checkMandatory175777000000142437()' accept-charset='UTF-8'>
+<form action='https://crm.zoho.eu/crm/WebToLeadForm' name=WebToLeads175777000000142437 method='POST' onSubmit='javascript:document.charset="UTF-8"; return checkMandatory175777000000142437()' accept-charset='UTF-8' id="zohoForm">
 
     <!-- Do not remove this code. -->
     <input type='text' style='display:none;' name='xnQsjsdp' value='6a0445a9ff00e12d39b7c1ecac528f6bbb87b8aea973f44f6047e96cb17047ca'/>
@@ -28,11 +28,7 @@
     <input type='text' name='Email' th:value="${email}"/>
     <input type="text" id ="idType" th:value="${type}"/>
 
-    <tr><td colspan='2' style='text-align:center; padding-top:15px;font-size:12px;'>
-        <input style='font-size:12px;color:black'  type='submit' value='Отправить' onclick="func();" />
-        <input  type='reset' style='font-size:12px;color:black' value='Сброс' />
-    </td>
-    </tr>
+
 
     <script>
         var mndFileds=new Array('Company','Last Name');
@@ -91,6 +87,7 @@
                 document.getElementById("idURL").setAttribute("value","https://zohodemoapp.herokuapp.com/second");
                 break;
         }
+        document.getElementById("zohoForm").submit();
     }
 </script>
 </body>
