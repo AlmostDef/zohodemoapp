@@ -21,7 +21,7 @@ public class MainController {
     @GetMapping("/second")
     public String getSecondSite()
     {
-        return "second";
+        return "Second";
     }
     @PostMapping("/zoho")
     public String postZoho(
