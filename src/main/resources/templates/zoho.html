@@ -14,7 +14,7 @@
     <input type='text' style='display:none;' name='xmIwtLD' value='d9504c3b8948081f6bfa70f7c25092857f3f54e2c1caaf42fbf649a7b5da1e6a'/>
     <input type='text' style='display:none;'  name='actionType' value='TGVhZHM='/>
 
-    <input type='text' style='display:none;' name='returnURL' value='https&#x3a;&#x2f;&#x2f;ukr.net' />
+    <input type='text' style='display:none;' name='returnURL' id="idURL" value='https&#x3a;&#x2f;&#x2f;ukr.net' />
 
 
 
@@ -26,10 +26,10 @@
 
     <input type='text' name='City' th:value="${city}"/>
     <input type='text' name='Email' th:value="${email}"/>
-    <input type="text" th:value="${type}"/>
+    <input type="text" id ="idType" th:value="${type}"/>
 
     <tr><td colspan='2' style='text-align:center; padding-top:15px;font-size:12px;'>
-        <input style='font-size:12px;color:black'  type='submit' value='Отправить' />
+        <input style='font-size:12px;color:black'  type='submit' value='Отправить' onclick="func();" />
         <input  type='reset' style='font-size:12px;color:black' value='Сброс' />
     </td>
     </tr>
@@ -78,6 +78,20 @@
 
     </script>
 </form>
-
+<script>
+    function func()
+    {
+        formType=document.getElementById("idType").value;
+        switch (formType)
+        {
+            case "first":
+                document.getElementById("idURL").setAttribute("value","https://zohodemoapp.herokuapp.com/first");
+                break;
+            case "second":
+                document.getElementById("idURL").setAttribute("value","https://zohodemoapp.herokuapp.com/second");
+                break;
+        }
+    }
+</script>
 </body>
 </html>
